@@ -1,18 +1,32 @@
 {
   "user": [
     {
-      "name": "Yoshi's birthday bash",
-      "address": "samagipura",
-      "email": "navindu dilshan60@gmail.com",
-      "contact": "0716491737",
+      "name": "Amal Lakshan",
+      "address": "India",
+      "email": "amala@gamail.com",
+      "contact": "07121321323",
       "id": 1
     },
     {
-      "name": "Navindu",
-      "address": "Nice",
-      "email": "navindu dilshan60@gmail.com",
-      "contact": "121212",
+      "name": "Navindu Dilshan",
+      "email": "navindudilshan60@gmail.com",
+      "contact": "94716491737",
+      "address": "Sri lanka",
       "id": 2
+    },
+    {
+      "name": "Hiran",
+      "email": "sasds",
+      "contact": "1234453545",
+      "address": "Eheliyagoda",
+      "id": 4
+    },
+    {
+      "name": "Hemal",
+      "email": "ahdsdasd",
+      "contact": "122133432",
+      "address": "colombo",
+      "id": 5
     }
   ]
 }

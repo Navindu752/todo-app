@@ -1,86 +1,86 @@
 import axios from "axios";
 import * as types from "./actionTypes";
 
-const getUsers = (users) => ({
-    type: types.GET_USERS,
+const getNotes = (users) => ({
+    type: types.GET_NOTES,
     payload:users,
 });
 
-const userDeleted = () => ({
-    type:types.DELETE_USERS,
+const noteDeleted = () => ({
+    type:types.DELETE_NOTE,
 });
 
-const userAdded = () => ({
-    type:types.ADD_USERS,
+const noteAdded = () => ({
+    type:types.ADD_NOTE,
 });
 
-const userUpdated= () => ({
-    type:types.UPDATE_USER,
+const noteUpdated= () => ({
+    type:types.UPDATE_NOTE,
 });
 
-const getUser = (user) => ({
-    type:types.GET_SINGLE_USER,
+const getNote = (user) => ({
+    type:types.GET_SINGLE_NOTE,
     payload:user,
 });
 
-export const loadUsers = () => {
+export const loadNotes = () => {
     return function (dispatch){
         axios
         .get(`${process.env.REACT_APP_API}`)
         .then((resp) => {
             console.log("resp",resp);
-            dispatch(getUsers(resp.data));
+            dispatch(getNotes(resp.data));
         })
         .catch((error) => console.log(error));
     };
 };
-export const deleteUser = (id) => {
+export const deleteNote = (id) => {
     return function (dispatch){
         axios
         .delete(`${process.env.REACT_APP_API}/${id}`)
         .then((resp) => {
             console.log("resp",resp);
-            dispatch(userDeleted());
-            dispatch(loadUsers());
+            dispatch(noteDeleted());
+            dispatch(loadNotes());
         })
         .catch((error) => console.log(error));
     };
 };
 
-export const addUser = (user) => {
+export const addNote = (user) => {
     return function (dispatch){
         axios
         .post(`${process.env.REACT_APP_API}`,user)
         .then((resp) => {
             console.log("resp",resp);
-            dispatch(userAdded());
-            //dispatch(loadUsers());
+            dispatch(noteAdded());
+            //dispatch(loadNotes());
         })
         .catch((error) => console.log(error));
     };
 };
 
-export const getSingleUser = (id) => {
+export const getSingleNote = (id) => {
     return function (dispatch){
         axios
         .get(`${process.env.REACT_APP_API}/${id}`)
         .then((resp) => {
             console.log("resp",resp);
-            dispatch(getUser(resp.data));
-            //dispatch(loadUsers());
+            dispatch(getNote(resp.data));
+            //dispatch(loadNotes());
         })
         .catch((error) => console.log(error));
     };
 };
 
-export const updateUser = (user,id) => {
+export const updateNote = (user,id) => {
     return function (dispatch){
         axios
         .put(`${process.env.REACT_APP_API}/${id}`,user)
         .then((resp) => {
             console.log("resp",resp);
-            dispatch(userUpdated());
-            //dispatch(loadUsers());
+            dispatch(noteUpdated());
+            //dispatch(loadNotes());
         })
         .catch((error) => console.log(error));
     };

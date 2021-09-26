@@ -6,23 +6,23 @@ const initialState = {
     loading: true,
 };
 
-const usersReducer = (state = initialState, action) => {
+const notesReducer = (state = initialState, action) => {
     console.log(action);
     switch (action.type) {
-        case types.GET_USERS:
+        case types.GET_NOTES:
             return {
                 ...state,
                 users: action.payload,
                 loading: false,
             };
-        case types.DELETE_USERS:
-        case types.ADD_USERS:
-        case types.UPDATE_USER:
+        case types.DELETE_NOTE:
+        case types.ADD_NOTE:
+        case types.UPDATE_NOTE:
             return {
                 ...state,
                 loading: false
             };
-        case types.GET_SINGLE_USER:
+        case types.GET_SINGLE_NOTE:
             return {
                 ...state,
                 user: action.payload,
@@ -33,4 +33,4 @@ const usersReducer = (state = initialState, action) => {
     }
 };
 
-export default usersReducer;
+export default notesReducer;

@@ -1,32 +1,60 @@
 {
   "user": [
     {
-      "name": "Amal Lakshan",
-      "address": "India",
-      "email": "amala@gamail.com",
-      "contact": "07121321323",
+      "title": "Yoshi's birthday bash",
+      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "category": "money",
+      "date": "2021-09-22",
       "id": 1
     },
     {
-      "name": "Navindu Dilshan",
-      "email": "navindudilshan60@gmail.com",
-      "contact": "94716491737",
-      "address": "Sri lanka",
+      "title": "Complete my training",
+      "category": "todos",
+      "date": "2021-08-31",
+      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.",
       "id": 2
     },
     {
-      "name": "Hiran",
-      "email": "sasds",
-      "contact": "1234453545",
-      "address": "Eheliyagoda",
+      "title": "Order a pizza!",
+      "category": "todos",
+      "date": "2021-09-01",
+      "details": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       "id": 4
     },
     {
-      "name": "Hemal",
-      "email": "ahdsdasd",
-      "contact": "122133432",
-      "address": "colombo",
+      "title": "Assignment React",
+      "category": "todos",
+      "date": "2021-06-12",
+      "details": "Test",
       "id": 5
+    },
+    {
+      "title": "Navindu",
+      "category": "reminders",
+      "date": "2021-09-23",
+      "details": "Birthday",
+      "id": 6
+    },
+    {
+      "title": "sadsdadasd",
+      "category": "todos",
+      "date": "2021-09-16",
+      "details": "asdasdadsd",
+      "id": 7
+    },
+    {
+      "title": "dsadasd",
+      "category": "money",
+      "date": "2021-09-14",
+      "details": "sdadsad",
+      "id": 8
+    },
+    {
+      "title": "Hemal",
+      "category": "todos",
+      "date": "2021-09-30",
+      "details": "adsdadsdasd",
+      "id": 9
     }
   ]
 }

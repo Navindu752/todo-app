@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
 import { withStyles, makeStyles } from "@material-ui/core";
-import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@material-ui/core';
+import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow ,Typography} from '@material-ui/core';
 import { mergeClasses } from "@material-ui/styles";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteUser, loadUsers } from "../redux/actions";
+import { deleteNote, loadNotes } from "../redux/actions";
 import { Button, ButtonGroup } from "@material-ui/core";
 import { useHistory } from "react-router-dom";
+import { format } from 'date-fns';
 
 const useButtonStyles = makeStyles((theme) => ({
     root: {
@@ -50,8 +51,13 @@ const rows = [
 
 const useStyles = makeStyles({
     table: {
-        marginTop: 100,
+        marginTop: 50,
         minWidth: 900,
+    },
+    date: {
+        flexGrow: 1,
+        marginTop:30,
+        fontSize:25,
     },
 });
 
@@ -67,34 +73,37 @@ const Home = () => {
     const { users } = useSelector(state => state.data)
 
     useEffect(() => {
-        dispatch(loadUsers());
+        dispatch(loadNotes());
     }, []);
 
     const handleDelete = (id) => {
         if (window.confirm("Are you sure wanted to delete the user ?")) {
-            dispatch(deleteUser(id));
+            dispatch(deleteNote(id));
         }
     };
 
     return (
         <div>
             <div className={buttonStyles.root}>
-                <Button 
-                variant="contained" 
-                color="primary"
-                onClick={() => history.push("/addUser")}
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={() => history.push("/addNote")}
                 >
-                    Add User
+                    Create a new note
                 </Button>
             </div>
+            <Typography className={Classes.date} >
+                Today is the {format(new Date(), 'do MMMM Y')}
+            </Typography>
             <TableContainer component={Paper}>
                 <Table className={Classes.table} aria-label="customized table">
                     <TableHead>
                         <TableRow>
-                            <StyledTableCell>Name</StyledTableCell>
-                            <StyledTableCell align="center">Email</StyledTableCell>
-                            <StyledTableCell align="center">Contact</StyledTableCell>
-                            <StyledTableCell align="center">Address</StyledTableCell>
+                            <StyledTableCell>Note Title</StyledTableCell>
+                            <StyledTableCell align="center">Category</StyledTableCell>
+                            <StyledTableCell align="center">Date</StyledTableCell>
+                            <StyledTableCell align="center">Details</StyledTableCell>
                             <StyledTableCell align="center">Action</StyledTableCell>
                         </TableRow>
                     </TableHead>
@@ -102,11 +111,11 @@ const Home = () => {
                         {users && users.map((user) => (
                             <StyledTableRow key={user.id}>
                                 <StyledTableCell component="th" scope="row">
-                                    {user.name}
+                                    {user.title}
                                 </StyledTableCell>
-                                <StyledTableCell align="center">{user.email}</StyledTableCell>
-                                <StyledTableCell align="center">{user.contact}</StyledTableCell>
-                                <StyledTableCell align="center">{user.address}</StyledTableCell>
+                                <StyledTableCell align="center">{user.category}</StyledTableCell>
+                                <StyledTableCell align="center">{user.date}</StyledTableCell>
+                                <StyledTableCell align="center">{user.details}</StyledTableCell>
                                 <StyledTableCell align="center">
                                     <div className={buttonStyles.root}>
                                         <ButtonGroup
@@ -121,7 +130,7 @@ const Home = () => {
                                             >
                                                 Delete
                                             </Button>
-                                            <Button color="primary" onClick={() => history.push(`/editUser/${user.id}`) }>Edit</Button>
+                                            <Button color="primary" onClick={() => history.push(`/editNote/${user.id}`)}>Edit</Button>
                                         </ButtonGroup>
                                     </div>
                                 </StyledTableCell>

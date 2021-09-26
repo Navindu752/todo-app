@@ -1,5 +1,5 @@
-export const GET_USERS="GET_USERS";
-export const DELETE_USERS="DELETE_USERS";
-export const ADD_USERS="ADD_USERS";
-export const GET_SINGLE_USER="GET_SINGLE_USER";
-export const UPDATE_USER="UPDATE_USER";
+export const GET_NOTES="GET_NOTES";
+export const DELETE_NOTE="DELETE_NOTE";
+export const ADD_NOTE="ADD_NOTE";
+export const GET_SINGLE_NOTE="GET_SINGLE_NOTE";
+export const UPDATE_NOTE="UPDATE_NOTE";
